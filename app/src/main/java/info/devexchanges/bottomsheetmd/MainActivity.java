@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list_view);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+		bottomSheet = (GridView) findViewById(R.id.bottom_sheet);
 
         setSupportActionBar(toolbar);
 
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         bottomSheetAdapter = new BottomSheetAdapter(this, R.layout.item_grid, bottomItems);
         bottomSheet.setAdapter(bottomSheetAdapter);
 
-        bottomSheet = (GridView) findViewById(R.id.bottom_sheet);
         bottomSheet.setTranslationY(getStatusBarHeight());
         sheetBehavior = BottomSheetBehavior.from(bottomSheet);
         sheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
